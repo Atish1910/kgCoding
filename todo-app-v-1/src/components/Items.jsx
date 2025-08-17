@@ -21,7 +21,6 @@ const Items = () => {
                 items.map((item) => {
                     const baught = activeItems.includes(item);
                     return(
-                        
                         <li className={`list-group-item ${baught && 'active'}`} key={item}>
                         <span>{item}</span>
                         <button className='btn btn-warning' onClick={(e) => handleBuyBtn(e, item)}> Buy</button>
