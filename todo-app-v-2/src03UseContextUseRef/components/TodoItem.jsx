@@ -1,0 +1,23 @@
+import React, { useContext } from 'react'
+import { TodoItemsContext } from '../store/TodoItemsContext'
+
+function TodoItem({ todoName, todoDate}) {
+    const {deleteItem} = useContext(TodoItemsContext);
+    return (
+        <>
+          <div className="row justify-container-center align-items-center border border-dark py-3">
+                <div className="col-lg-4">
+                    <h6>{todoName}</h6>
+                </div>
+                <div className="col-lg-4">
+                    <h6>{todoDate}</h6> 
+                </div>
+                <div className="col-lg-4">
+                    <button className='btn btn-danger' onClick={() => deleteItem(todoName)}>delete</button>
+                </div>
+            </div>  
+        </>
+    )
+}
+
+export default TodoItem
